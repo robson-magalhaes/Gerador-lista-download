@@ -14,10 +14,9 @@ function adicionarProduto() {
     
     novoProduto.innerHTML = nome + "<br/> - Preço: R$" + preco + 
     " - quantidade: "+"<span id='"+id+"controlquantidade'>" + quantidade + "<br/>Produto: " + produtos +
-    "</span> <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button>";
+    "</span><hr/>"/* <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button>";*/
     
     document.getElementById("listaProdutos").appendChild(novoProduto);
-    
 }
 
 function gerarListaProdutos() {
