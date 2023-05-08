@@ -11,7 +11,7 @@ function adicionarProduto() {
     var novoProduto = document.createElement("li");
     var id = "produto" + (productList.length - 1);
 
-    novoProduto.innerHTML = nome + " - Preço: R$" + preco + 
+    novoProduto.innerHTML = nome + "<br/> - Preço: R$" + preco + 
     " - Estoque: "+"<span id='"+id+"controlEstoque'>" + estoque + 
     "</span> <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button> <button onclick='adicionarUnidade(" + (productList.length - 1) + ")'>Adicionar</button><hr/>";
 
