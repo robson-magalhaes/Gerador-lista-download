@@ -17,8 +17,11 @@
 		<label for="preco">Preço:</label>
 		<input type="number" id="preco"><br>
 
-		<label for="estoque">Estoque:</label>
-		<input type="number" id="estoque"><br>
+		<label for="estoque">quantidade:</label>
+		<input type="number" id="quantidade"><br>
+
+		<label for="produtos">Produto:</label>
+		<input type="text" id="produtos"><br>
 
 		<input type="button" value="Adicionar" onclick="adicionarProduto()"><br>
 	</form>
@@ -28,9 +31,9 @@
 	<ul id="listaProdutos">
 		<!-- Lista de produtos vazia -->
 	</ul>
+	<button onclick="gerarListaProdutos()">Salvar</button>
     </div>
-
     <script src="assets/js/script.js"></script>
-    
+    <script src="FileSaver.js"></script>
 </body>
 </html>
