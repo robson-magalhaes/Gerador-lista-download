@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Adicionar Produto</title>
+	<script>
+		function adicionarProduto() {
+			var produto = document.getElementById("produto").value;
+			var estoqueMaximo = document.getElementById("estoqueMaximo").value;
+			var estoqueAtual = document.getElementById("estoqueAtual").value;
+
+			if (produto !== '' && estoqueMaximo !== '' && estoqueAtual !== '') {
+				// Verifica se o estoque atual é maior que o máximo permitido
+				if (parseInt(estoqueAtual) > parseInt(estoqueMaximo)) {
+					document.getElementById("esgotado").checked = true;
+				} else {
+					document.getElementById("esgotado").checked = false;
+				}
+
+				// Cria uma nova linha na tabela com as informações do produto e o controle de estoque
+				var tabela = document.getElementById("tabelaProdutos");
+				var novaLinha = tabela.insertRow(-1);
+				var colunaProduto = novaLinha.insertCell(0);
+				var colunaEstoqueMaximo = novaLinha.insertCell(1);
+				var colunaEstoqueAtual = novaLinha.insertCell(2);
+				var colunaEsgotado = novaLinha.insertCell(3);
+				var colunaControleEstoque = novaLinha.insertCell(4);
+
+				colunaProduto.innerHTML = produto;
+				colunaEstoqueMaximo.innerHTML = estoqueMaximo;
+				colunaEstoqueAtual.innerHTML = estoqueAtual;
+				colunaEsgotado.innerHTML = document.getElementById("esgotado").checked ? "Sim" : "Não";
+
+				// Cria um controle de estoque para o produto
+				var controleEstoque = document.createElement("input");
+				controleEstoque.type = "number";
+				controleEstoque.min = "0";
+				controleEstoque.max = estoqueMaximo;
+				controleEstoque.value = estoqueAtual;
+				controleEstoque.onchange = function() {
+					// Atualiza o valor do estoque atual quando o controle de estoque é alterado
+					colunaEstoqueAtual.innerHTML = this.value;
+					// Verifica se o produto está esgotado
+					if (parseInt(this.value) == 0) {
+						colunaEsgotado.innerHTML = "Sim";
+						document.getElementById("esgotado").checked = true;
+					} else {
+						colunaEsgotado.innerHTML = "Não";
+						document.getElementById("esgotado").checked = false;
+					}
+				};
+				colunaControleEstoque.appendChild(controleEstoque);
+
+				// Limpa os campos do formulário
+				document.getElementById("produto").value = '';
+				document.getElementById("estoqueMaximo").value = '';
+				document.getElementById("estoqueAtual").value = '';
+			} else {
+				alert("Por favor, preencha todos os campos.");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Adicionar Produto</h1>
+	<form>
+		<label for="produto">Produto:</label>
+		<input type="text" id="produto" name="produto"><br><br>
+
+		<label for="estoqueMaximo">Estoque Máximo:</label>
+		<input type="number" id="estoqueMaximo" name="estoqueMaximo"><br><br>
+
+		<label for="estoqueAtual">Estoque Atual:</label>
+		<input type="number
+        id="estoqueAtual" name="estoqueAtual"><br><br>
+
+	<label for="esgotado">Esgotado:</label>
+	<input type="checkbox" id="esgotado" name="esgotado" disabled><br><br>
+
+	<button type="button" onclick="adicionarProduto()">Adicionar Produto</button>
+</form>
+<br>
+<table id="tabelaProdutos">
+	<tr>
+		<th>Produto</th>
+		<th>Estoque Máximo</th>
+		<th>Estoque Atual</th>
+		<th>Esgotado</th>
+		<th>Controle de Estoque</th>
+	</tr>
+</table>
+</body>
+</html>

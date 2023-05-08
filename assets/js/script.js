@@ -1,45 +1,48 @@
+var productList = [];
+
 function adicionarProduto() {
-    // Obter os valores dos campos do formulário
     var nome = document.getElementById("nome").value;
     var preco = document.getElementById("preco").value;
     var estoque = document.getElementById("estoque").value;
 
-    // Criar um novo elemento da lista de produtos
+    var produto = { nome: nome, preco: preco, estoque: estoque };
+    productList.push(produto);
+
     var novoProduto = document.createElement("li");
+    var id = "produto" + (productList.length - 1);
 
-    // Adicionar o nome, preço e estoque do produto ao elemento da lista
-    novoProduto.innerHTML = nome + " - R$ " + preco + " - <span id='" + nome + "-estoque'>" + estoque + "</span> em estoque <button onclick='removerUnidade(\"" + nome + "\")'>Remover</button>";
+    novoProduto.innerHTML = nome + " - Preço: R$" + preco + 
+    " - Estoque: "+"<span id='"+id+"controlEstoque'>" + estoque + 
+    "</span> <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button> <button onclick='adicionarUnidade(" + (productList.length - 1) + ")'>Adicionar</button>";
 
-    // Adicionar o novo produto à lista de produtos
     document.getElementById("listaProdutos").appendChild(novoProduto);
-    nome.value.innerHTML = '';
-
-    // Verificar se o estoque está esgotado
+    
     if (estoque == 0) {
-        // Se estiver esgotado, marcar o checkbox
         document.getElementById("esgotado").checked = true;
     }
 }
 
-function removerUnidade(nome) {
-    // Obter o elemento <span> que mostra o estoque do produto
-    var estoqueSpan = document.getElementById(nome + "-estoque");
-
-    // Obter o valor atual do estoque
+function removerUnidade(index) {
+    var produto = productList[index];
+    var estoqueSpan = document.getElementById("produto" + index + "controlEstoque");
     var estoqueAtual = parseInt(estoqueSpan.textContent);
-
-    // Verificar se ainda há estoque
     if (estoqueAtual > 0) {
-        // Diminuir a quantidade de estoque em 1 unidade
         var novoEstoque = estoqueAtual - 1;
-
-        // Atualizar o texto do elemento <span> com o novo estoque
         estoqueSpan.textContent = novoEstoque;
-
-        // Verificar se o estoque está esgotado
+        produto.estoque = novoEstoque;
         if (novoEstoque == 0) {
-            // Se estiver esgotado, marcar o checkbox
-            document.getElementById(nome + "-esgotado").checked = true;
+            document.getElementById("produto" + index + "-esgotado").checked = true;
         }
+    }
+}
+
+function adicionarUnidade(index) {
+    var produto = productList[index];
+    var estoqueSpan = document.getElementById("produto" + index + "controlEstoque");
+    var estoqueAtual = parseInt(estoqueSpan.textContent);
+    if (estoqueSpan != 0){
+        var novoEstoque = estoqueAtual + 1;
+        estoqueSpan.textContent = novoEstoque;
+        produto.estoque = novoEstoque;
     }
 }
