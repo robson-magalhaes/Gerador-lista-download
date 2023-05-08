@@ -5,7 +5,7 @@ function adicionarProduto() {
     var preco = document.getElementById("preco").value;
     var quantidade = document.getElementById("quantidade").value;
     var produtos = document.getElementById("produtos").value;
-    
+
     document.querySelector('#temp').style.display="block";
 
     var produto = { nome: nome, preco: preco, quantidade: quantidade, produtos : produtos};
@@ -15,7 +15,7 @@ function adicionarProduto() {
     var id = "produto" + (productList.length - 1);
     
     novoProduto.innerHTML = nome + "<br/> - Preço: R$" + preco + 
-    " - quantidade: "+"<span id='"+id+"controlquantidade'>" + quantidade + "<br/>Produto: " + produtos +
+    " - Quantidade: "+"<span id='"+id+"controlquantidade'>" + quantidade + "<br/>Produto: " + produtos +
     "</span><hr/>"/* <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button>";*/
     
     document.getElementById("listaProdutos").appendChild(novoProduto);
