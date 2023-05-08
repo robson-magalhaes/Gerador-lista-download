@@ -13,10 +13,10 @@ function adicionarProduto() {
 
     novoProduto.innerHTML = nome + " - Preço: R$" + preco + 
     " - Estoque: "+"<span id='"+id+"controlEstoque'>" + estoque + 
-    "</span> <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button> <button onclick='adicionarUnidade(" + (productList.length - 1) + ")'>Adicionar</button>";
+    "</span> <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button> <button onclick='adicionarUnidade(" + (productList.length - 1) + ")'>Adicionar</button><hr/>";
 
     document.getElementById("listaProdutos").appendChild(novoProduto);
-    
+
     if (estoque == 0) {
         document.getElementById("esgotado").checked = true;
     }
