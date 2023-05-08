@@ -5,6 +5,8 @@ function adicionarProduto() {
     var preco = document.getElementById("preco").value;
     var quantidade = document.getElementById("quantidade").value;
     var produtos = document.getElementById("produtos").value;
+    
+    document.querySelector('#temp').style.display="block";
 
     var produto = { nome: nome, preco: preco, quantidade: quantidade, produtos : produtos};
     productList.push(produto);
