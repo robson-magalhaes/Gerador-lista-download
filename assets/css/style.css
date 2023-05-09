@@ -81,10 +81,10 @@ input{
     width: 120px;
     padding: 10px;
     color: white;
-    background-color: rgb(98, 98, 248);
+    background-color: rgb(59, 209, 59);
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 2px 5px 2px rgb(59, 209, 59);
+    box-shadow: 1px 2px 5px 2px rgb(89, 94, 97);
 }
 #listaProdutos{
     display: flex;
@@ -107,6 +107,12 @@ input{
         display: flex;
         flex-direction: column;
     }
+    .container h1{
+        font-size: 40px;
+    }
+    .container b,c{
+        font-size: 55px;
+    }
     .container{
         margin: 0;
         padding: 10px;
@@ -115,7 +121,7 @@ input{
         margin-bottom: 25px;
     }
     label{
-        font-size: 30px;
+        font-size: 25px;
         margin-top: 10px;
     }
     input{
@@ -146,7 +152,6 @@ input{
         margin-top: 10px;
         padding: 5px 18px 5px 18px;
         color: white;
-        background-color: rgb(98, 98, 248);
         border: none;
     }
     #temp h2{
