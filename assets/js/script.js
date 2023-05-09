@@ -14,11 +14,14 @@ function adicionarProduto() {
     var novoProduto = document.createElement("li");
     var id = "produto" + (productList.length - 1);
     
-    novoProduto.innerHTML = nome + "<br/> - Preço: R$" + preco + 
-    " - Quantidade: "+"<span id='"+id+"controlquantidade'>" + quantidade + "<br/>Produto: " + produtos +
-    "</span><hr/>"/* <button onclick='removerUnidade(" + (productList.length - 1) + ")'>Remover</button>";*/
-    
-    document.getElementById("listaProdutos").appendChild(novoProduto);
+    novoProduto.innerHTML = nome + "<br/>Preço: R$" + preco + 
+    "<br>Quantidade: "+"<span class='"+id+"controlquantidade item-lista'>" + quantidade + "<br/>Produto: " + produtos +
+    "</span><hr/>"
+
+    var list_produto = document.getElementById("listaProdutos").appendChild(novoProduto);
+    list_produto.style.padding="10px";
+    list_produto.style.margin="5px 10px 5px 20px";
+    list_produto.style.border="solid 1px purple";
 }
 
 function gerarListaProdutos() {
