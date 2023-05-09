@@ -24,7 +24,7 @@ section{
     padding: 20px;
     z-index: 999;
     box-shadow: 1px 2px 10px 5px rgb(59, 154, 209);
-    background-color:white;
+    background-color:rgba(255, 255, 255, 0.712);
     height: 100vh;
     position: fixed;
 }
