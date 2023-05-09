@@ -22,7 +22,7 @@ function adicionarProduto() {
     var list_produto = document.getElementById("listaProdutos").appendChild(novoProduto);
     list_produto.style.padding="10px";
     list_produto.style.margin="5px 10px 5px 20px";
-    list_produto.style.border="solid 1px purple";
+    list_produto.style.border="solid 1px rgb(89, 94, 97)";
 }
 
 function gerarListaProdutos() {
