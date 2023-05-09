@@ -7,6 +7,7 @@ function adicionarProduto() {
     var produtos = document.getElementById("produtos").value;
 
     document.querySelector('#temp').style.display="block";
+    document.getElementById('btn-salvar-2').style.display="block";
 
     var produto = { nome: nome, preco: preco, quantidade: quantidade, produtos : produtos};
     productList.push(produto);
