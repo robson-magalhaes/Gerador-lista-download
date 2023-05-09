@@ -44,10 +44,10 @@ input{
     display: none;
 }
 #temp h2{
-    text-align: center;
     color:white;
-    font-size: 50px;
-    text-shadow: 2px 2px 2px black;
+    font-size: 25px;
+    margin-left: 20px;
+    text-shadow: 2px 2px 2px rgb(59, 154, 209);
 }
 #btn-salvar{
     font-size: 20px;
@@ -57,7 +57,7 @@ input{
     background-color: rgb(98, 98, 248);
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 2px 5px 2px rgb(77, 123, 129);
+    box-shadow: 1px 2px 5px 2px rgb(59, 154, 209);
 }
 #listaProdutos{
     display: flex;
