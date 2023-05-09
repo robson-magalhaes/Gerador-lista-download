@@ -130,7 +130,8 @@ input{
         flex-direction: column;
 
     }
-    #btn-salvar, #btn-salvar-2{
+    #btn-salvar, 
+    #btn-salvar-2{
         width: auto;
         font-size: 30px;
         margin-top: 10px;
