@@ -26,6 +26,7 @@ section{
     box-shadow: 1px 2px 10px 5px rgb(59, 154, 209);
     background-color:white;
     height: 100vh;
+    position: fixed;
 }
 .container h1{
     font-size: 28px;
@@ -87,6 +88,7 @@ input{
     .container{
         margin: 0;
         width: auto;
+        position: inherit;
     }
     label{
         font-size: 30px;
