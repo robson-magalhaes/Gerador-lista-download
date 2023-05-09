@@ -3,7 +3,7 @@
 }
 body{
     box-sizing: border-box;
-    background-image: url('../imagens/compress2.jpeg');
+    background-image: url('../imagens/compress1.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -35,6 +35,10 @@ section{
 }
 .container b{
     font-size: 40px;
+    margin-left: 150px;
+}
+c{
+    font-size: 60px;
 }
 label{
     margin-top: 20px;
@@ -80,13 +84,14 @@ input{
     background-color: rgb(98, 98, 248);
     border-radius: 5px;
     border: none;
-    box-shadow: 1px 2px 5px 2px rgb(59, 154, 209);
+    box-shadow: 1px 2px 5px 2px rgb(59, 209, 59);
 }
 #listaProdutos{
     display: flex;
     flex-wrap: wrap;
     font-size: 20px;
     margin: 10px;
+    padding: 10px;
     margin-bottom: 10px;
     width: 60vw;
     background-color: rgba(240, 248, 255, 0.712);
@@ -143,8 +148,6 @@ input{
         color: white;
         background-color: rgb(98, 98, 248);
         border: none;
-        box-shadow: none;
-        box-shadow: 2px 2px 2px 2px rgb(59, 154, 209);
     }
     #temp h2{
         padding-bottom:15px;
