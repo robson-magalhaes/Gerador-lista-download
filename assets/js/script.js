@@ -11,7 +11,7 @@ function adicionarProduto() {
     var produto = { nome: nome, preco: preco, quantidade: quantidade, produtos : produtos};
     productList.push(produto);
 
-    var novoProduto = document.createElement("li");
+    var novoProduto = document.createElement("ol");
     var id = "produto" + (productList.length - 1);
     
     novoProduto.innerHTML = nome + "<br/>Preço: R$" + preco + 
