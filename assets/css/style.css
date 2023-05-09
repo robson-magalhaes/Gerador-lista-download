@@ -118,6 +118,7 @@ input{
 
     }
     #btn-salvar{
+        width: auto;
         font-size: 30px;
         margin-top: 10px;
         padding: 5px 18px 5px 18px;
